@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Text Correction{% endblock %}
+
+{% block content %}
+  <form method="POST" action="{{ url_for('file_correction') }}" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Upload File</label>
+        <input type="file" class="form-control-file" name="file" id="file" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+    {% if corrected %}
+        <label>{{ corrected }}</label>
+    {% endif %}
+{% endblock %}
