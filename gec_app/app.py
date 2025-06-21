@@ -24,7 +24,7 @@ def file_correction():
             file_content = uploaded_file.read().decode('utf-8')  # Read as text
             corrected = correct_text(file_content)
             return render_template('file_correction.html',
-                            #    input=request.form.get('input_text'),
+                               input=file_content,
                                corrected=corrected)
         else:
             flash("Only .txt files are supported currently.")

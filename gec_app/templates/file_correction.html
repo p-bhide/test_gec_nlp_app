@@ -8,9 +8,22 @@
         <label for="file">Upload File</label>
         <input type="file" class="form-control-file" name="file" id="file" required>
     </div>
+    {% if input %}
+        <table>
+            <tr>
+                <th>
+                    <label>Input: </label> 
+                </th>
+                <td><label>{{ input }}</label></td>
+            </tr>
+            <tr>
+                <th>
+                    <label>Corrected: </label> 
+                </th>
+                <td><label>{{ corrected }}</label></td>
+            </tr>
+        </table>
+        {% endif %}
     <button type="submit" class="btn btn-primary">Upload & Correct</button>
     </form>
-    {% if corrected %}
-        <label>{{ corrected }}</label>
-    {% endif %}
 {% endblock %}
