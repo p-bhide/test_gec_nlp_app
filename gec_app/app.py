@@ -10,7 +10,7 @@ def text_correction():
     elif request.method == 'POST':
         corrected = correct_text(request.form.get('input_text'))
         return render_template('home.html',
-                            #    input=request.form.get('input_text'),
+                               input=request.form.get('input_text'),
                                corrected=corrected)
     
 @app.route('/file_correction', methods=['GET', 'POST'])

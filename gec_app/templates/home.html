@@ -4,9 +4,25 @@
 
 {% block content %}
   <form action="/" method="POST">
-            <label for="input_text">Input Text:</label>
-            <textarea id="input_text" name="input_text">{{ corrected }}</textarea>
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
+        <label for="input_text">Input Text:</label>
+        <textarea id="input_text" name="input_text">{{ corrected }}</textarea>
+        <br><br>
+        {% if input %}
+        <table>
+            <tr>
+                <th>
+                    <label>Input: </label> 
+                </th>
+                <td><label>{{ input }}</label></td>
+            </tr>
+            <tr>
+                <th>
+                    <label>Corrected: </label> 
+                </th>
+                <td><label>{{ corrected }}</label></td>
+            </tr>
+        </table>
+        {% endif %}
+        <button type="submit">Correct</button>
+    </form>
 {% endblock %}
