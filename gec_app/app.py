@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, Response
+from flask import Flask, render_template, request, Response
 from gec import correct_text
 
 app = Flask(__name__)
@@ -23,19 +23,13 @@ def file_correction():
         if uploaded_file and uploaded_file.filename.endswith('.txt'):
             file_content = uploaded_file.read().decode('utf-8')  # Read as text
             corrected = correct_text(file_content)
-            return render_template('file_correction.html',
-                               input=file_content,
-                               corrected=corrected)
+            headers = {
+            'Content-Disposition': f'attachment; filename={uploaded_file.filename.split('.')[0]}_corrected.txt'
+                }
+            return Response(corrected, mimetype='text/plain', headers=headers)
         else:
-            flash("Only .txt files are supported currently.")
-
-@app.route('/download_file', methods=['GET', 'POST'])
-def download_file():
-    corrected = request.form['corrected']
-    headers = {
-        'Content-Disposition': 'attachment; filename=corrected.txt'
-    }
-    return Response(corrected, mimetype='text/plain', headers=headers)
+            error = "* Only .txt files are supported currently."
+            return render_template('file_correction.html', error=error)
 
 if __name__ == '__main__':
     app.run()
