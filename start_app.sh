@@ -16,7 +16,5 @@ export FLASK_APP=app.py
 export FLASK_ENV=development 
 export FLASK_DEBUG=1
 
-export HF_HUB_DISABLE_IMPLICIT_TOKEN=1
-
 echo "Starting Flask application..."
 flask run
