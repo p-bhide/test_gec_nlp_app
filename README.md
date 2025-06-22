@@ -11,5 +11,3 @@ Sample screenshots:
 ![image](https://github.com/user-attachments/assets/156ef43d-d52a-44c2-b587-d8bcfa1011b3)
 ![image](https://github.com/user-attachments/assets/04217912-195d-41c2-a533-9ea2499e49b4)
 ![image](https://github.com/user-attachments/assets/ae445bee-9047-431a-82de-dfb028da1049)
-![image](https://github.com/user-attachments/assets/3a4b28db-21f3-4687-ba02-17be110167f2)
-
